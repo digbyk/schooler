@@ -1,15 +1,6 @@
-var conf = require('nconf');
-conf.argv()
-	.env()
-	.file({
-		file: './config.json'
-	});
-var url = conf.get('db:url');
-console.log(url);
-
 var mongoose = require('mongoose');
 
-mongoose.connect(url, {
+mongoose.connect(process.env.MONGODB_URL, {
 	server: {
 		auto_reconnect: true
 	}
