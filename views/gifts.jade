@@ -1,0 +1,11 @@
+extends layout
+
+block append script
+
+block content
+	.row
+		.col-sm-12
+			h1 Gifts
+			ul
+				each gift in gifts
+					li #{gift.name} - #{gift.event} - #{gift.enteredBy.name}

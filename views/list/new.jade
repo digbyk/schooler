@@ -1,0 +1,31 @@
+extends ../layout
+
+block append script
+
+block content
+	.row
+		.col-sm-8
+			h1 New list
+			form(method='post')
+				table(class='table')
+					tbody
+						tr
+							td
+								label(for='name') Name:
+							td
+								input(name='name', id='name', value='')
+						tr
+							td
+								label(for='type') Type:
+							td
+								input(name='type', id='type', value='')
+						tr
+							td
+								label(for='notes') Notes:
+							td
+								textarea(name='notes', id='notes', value='')
+					tfoot
+						tr
+							td
+								input(type='submit', class='btn btn-primary', value='Submit')
+

@@ -1,0 +1,37 @@
+extends layout
+
+block append script
+
+block content
+	.row
+		.col-sm-12
+			if user
+				h1 My lists
+	.row
+		.col-sm-12
+			table
+				thead
+					tr
+						th(colspan="3")
+						th Name
+						th Type
+						th Notes
+				tbody
+					each list in myLists
+						tr
+							td
+								a(href='/list/view/'+list._id)
+									i(class='fa fa-info-circle')
+							td
+								a(href='/list/edit/'+list._id)
+									i(class='fa fa-edit')
+							td
+								a(href='/list/delete/'+list._id)
+									i(class='fa fa-times')
+							td
+								a(href='/list/'+list._id+'/'+list.name) #{list.name}
+							td #{list.type}
+							td #{list.notes}
+			a(href='/list/new', class='btn btn-primary btn-sm')
+				i(class='fa fa-list-alt')
+				span New list
