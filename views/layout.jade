@@ -1,0 +1,52 @@
+doctype html
+html(lang="en", ng-app="AiwfApp")
+	head
+		title All I Want For
+
+		meta(name='Content-Type', content='text/html; charset=UTF-8')
+		meta(name='X-UA-Compatible', content='IE=edge,chrome=1')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0')
+
+		link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
+		link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap-theme.min.css')
+		link(rel='stylesheet', href='//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css')
+		link(rel='stylesheet', href='//fonts.googleapis.com/css?family=Lato:400,700')
+		link(rel='stylesheet', href='/stylesheets/style.css')
+
+		link(rel='shortcut icon', href='/images/favicon.png', sizes="196x196", type='image/x-icon')
+		link(rel='shortcut icon', href='/images/favicon.png', sizes="128x128", type='image/x-icon')
+		link(rel='apple-touch-icon', href='/images/favicon.png', sizes="128x128", type='image/x-icon')
+		link(rel='apple-touch-icon-precomposed', href='/images/favicon.png', sizes="128x128", type='image/x-icon')
+
+	body
+
+		nav.navbar.navbar-default.navbar-fixed-top(role='navigation')
+			div.container
+				div.navbar-header
+					button.navbar-toggle(data-toggle='collapse', data-target='#eg-nav')
+					a.navbar-brand(href='/') All I Want For
+				div.collapse.navbar-collapse#eg-nav
+					ul.nav.navbar-nav
+						if user
+							li
+								a(href='/lists') My lists
+							li
+								a(href='/gifts') My gifts
+					ul.nav.navbar-nav.navbar-right
+						if !user
+							li
+								a(href='/auth/google') Google login
+						if user
+							li
+								a(href='/auth/profile') #{user.name}
+							li
+								a(href='/auth/logout') Logout
+		div.container.main
+			block content
+
+		block script
+			script(type='text/javascript', src='//code.jquery.com/jquery-2.0.3.min.js')
+			script(type='text/javascript', src='//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js')
+			script(type='text/javascript', src='//ajax.googleapis.com/ajax/libs/angularjs/1.2.24/angular.min.js')
+			script(type='text/javascript', src='//ajax.googleapis.com/ajax/libs/angularjs/1.2.24/angular-resource.min.js')
+			script(type='text/javascript', src='/js/application.js')

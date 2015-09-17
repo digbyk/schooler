@@ -1,0 +1,27 @@
+extends layout
+
+block append script
+
+block content
+	.row
+		.col-sm-12
+			h1= list.name
+			table
+				thead
+					th ID
+					th Name
+					th URL
+					th Count
+					th Entered by
+					th Entered for
+					th Bought by
+				tbody
+					each gift in gifts
+						tr(data-id=gift._id)
+							td= gift._id
+							td= gift.name
+							td= gift.url
+							td= gift.count
+							td= gift.enteredBy
+							td= gift.enteredFor
+							td= gift.boughtBy
