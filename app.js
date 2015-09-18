@@ -1,4 +1,6 @@
-require('dotenv').load();
+require('dotenv').config({
+	silent: true
+});
 
 var express = require('express');
 var path = require('path');
@@ -43,6 +45,6 @@ app.use(function (req, res, next) {
 var host = process.env.HOST || '127.0.0.1';
 var port = process.env.PORT || 3000;
 
-app.listen(port, host, function () {
+app.listen(port, function () {
 	console.log("Listening on " + host + ":" + port)
 });
