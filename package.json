@@ -1,7 +1,6 @@
 {
-	"name": "aiwf-node",
-	"subdomain": "aiwf-node",
-	"version": "0.2.1-11",
+	"name": "schooler",
+	"version": "0.1.0",
 	"private": true,
 	"scripts": {
 		"start": "node app.js"
